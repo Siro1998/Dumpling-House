@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
       propertyPath: m_Name
-      value: CFX3_Skull_Explosion
+      value: CFX3_Skull_Explosion Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
+      propertyPath: m_TagString
+      value: Explosion
       objectReference: {fileID: 0}
     - target: {fileID: 1475055493311306, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
       propertyPath: m_IsActive
