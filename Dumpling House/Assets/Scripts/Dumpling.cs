@@ -35,7 +35,7 @@ public class Dumpling : MonoBehaviour
     
     private IEnumerator CreateExplosions(Vector3 direction)
     {
-        for (int i = 1; i < 3; i++) 
+        for (int i = 1; i < 2; i++) 
         { 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, i, levelMask);
             //Physics.Raycast(transform.position + new Vector3(0,.5f,0), direction, out hit, i, levelMask);
