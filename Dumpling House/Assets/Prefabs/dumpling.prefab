@@ -137,10 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06fa793f8ebdbf4da3b8dc63e662e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 2868783005134047589, guid: 1ec69dd0dfc8f2b4bac2bd2a34cccbf4, type: 3}
+  explosionPrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
   levelMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 68
 --- !u!95 &6802872130688018762
 Animator:
   serializedVersion: 4
