@@ -17,6 +17,9 @@ public class MoveWASD : MonoBehaviour
     [SerializeField]
     private GameObject dumpling;
 
+    // animations
+    Vector3 movement;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -65,15 +68,21 @@ public class MoveWASD : MonoBehaviour
             MovementX = 0;
         }
 
-        if (Input.GetKeyDown("return"))
+        if (Input.GetKeyDown("space"))
         {
             DropBomb(); // drop bomb using return key
         }
+
+        //animations
+        animator.SetFloat("Horizontal", MovementX);
+        animator.SetFloat("Vertical", MovementY);
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
+        //animator.SetFloat("Speed", Speed); // passes speed float into this parameter
     }
 
     void DropBomb()
     {
         //create bomb at player position
-        Instantiate(dumpling, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(dumpling,this.gameObject.transform.position, Quaternion.identity);
     }
 }

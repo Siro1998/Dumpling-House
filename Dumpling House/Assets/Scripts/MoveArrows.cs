@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveArrows : MonoBehaviour
-{ 
-
+{
     // PLAYER = ARROWS + SPACE FOR BOMBS
 
     public float Speed; // speed (public) 
@@ -12,7 +11,7 @@ public class MoveArrows : MonoBehaviour
     float MovementY; // y direction
 
     // animations
-    Vector3 movement; 
+    Vector3 movement;
     public Animator animator;
 
     Rigidbody2D Rb; // reference players rigid body
@@ -36,7 +35,7 @@ public class MoveArrows : MonoBehaviour
     void Update()
     {
         //// changing speed of character each frame
-        //Rb.velocity = new Vector2(MovementX * Speed * Time.deltaTime, MovementY * Speed * Time.deltaTime);
+        Rb.velocity = new Vector2(MovementX * Speed * Time.deltaTime, MovementY * Speed * Time.deltaTime);
 
         // a place to store input
         if (Input.GetKeyDown(KeyCode.UpArrow)) //up 
@@ -70,7 +69,7 @@ public class MoveArrows : MonoBehaviour
             MovementX = 0;
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("return"))
         {
             DropBomb(); // drop bomb using space key
         }
@@ -78,18 +77,13 @@ public class MoveArrows : MonoBehaviour
         //animations
         animator.SetFloat("Horizontal", MovementX);
         animator.SetFloat("Vertical", MovementY);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        // changing sped of character each frome 
-        Rb.velocity = new Vector2(MovementX * Speed * Time.deltaTime, MovementY * Speed * Time.deltaTime);
-
-        //transform.Translate(movement * Speed * Time.deltaTime);
-
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
+        //animator.SetFloat("Speed",Speed); // passes speed float into this parameter
     }
 
     void DropBomb()
     {
         //create bomb at player position
-        Instantiate(dumpling, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(dumpling,this.gameObject.transform.position, Quaternion.identity);
     }
 }
