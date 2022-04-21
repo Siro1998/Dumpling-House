@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Explosion
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -42,11 +43,11 @@ TagManager:
   - name: Floor
     uniqueID: 1437772231
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Dumpling
     uniqueID: 2533114355
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Blocks
     uniqueID: 423799337

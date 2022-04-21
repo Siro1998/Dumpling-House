@@ -15,6 +15,7 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 	
 	void OnEnable()
 	{
+		
 		StartCoroutine("CheckIfAlive");
 	}
 	
@@ -24,7 +25,8 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 		
 		while(true && ps != null)
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.3f);
+			GetComponent<CircleCollider2D>().enabled = false;
 			if(!ps.IsAlive(true))
 			{
 				if(OnlyDeactivate)

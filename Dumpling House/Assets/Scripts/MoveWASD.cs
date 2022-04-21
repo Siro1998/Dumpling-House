@@ -83,6 +83,7 @@ public class MoveWASD : MonoBehaviour
     void DropBomb()
     {
         //create bomb at player position
-        Instantiate(dumpling,this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(dumpling, new Vector3(Mathf.RoundToInt(this.gameObject.transform.position.x), Mathf.RoundToInt(this.gameObject.transform.position.y), 0), dumpling.transform.rotation);
+        //Instantiate(dumpling,this.gameObject.transform.position, Quaternion.identity);
     }
 }
