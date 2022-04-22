@@ -71,7 +71,15 @@ public class MoveArrows : MonoBehaviour
 
         if (Input.GetKeyDown("return"))
         {
-            DropBomb(); // drop bomb using space key
+            var collidersInRange = Physics2D.OverlapCircle(new Vector3(Mathf.RoundToInt(this.gameObject.transform.position.x), Mathf.RoundToInt(this.gameObject.transform.position.y)),0.5f);
+            //make sure only one dumpling on one grid
+            if (collidersInRange.tag == "Dumpling") 
+            {
+                print("foundDumpling");
+            } else {
+                // spot is empty, we can spawn
+                DropBomb();
+            }
         }
 
         //animations

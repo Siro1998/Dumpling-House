@@ -5,24 +5,19 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     SpriteRenderer sprite;
-    //GameObject[] hearts;
-
-    
-
+    List<GameObject> heartsObjects;
+    public Animator animator;
     int life = 3;
    
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         Transform[] hearts = GetComponentsInChildren<Transform>();
-        List<GameObject> heartsObjects = new List<GameObject>();
+        heartsObjects = new List<GameObject>();
         foreach (Transform child in hearts)
         { 
             heartsObjects.Add(child.gameObject);
         }
-        // hearts[0] = this.gameObject.transform.GetChild(0).gameObject;
-        // hearts[1] = this.gameObject.transform.GetChild(1).gameObject;
-        // hearts[2] = this.gameObject.transform.GetChild(2).gameObject;
     }
     
     void Update()
@@ -35,12 +30,16 @@ public class PlayerDeath : MonoBehaviour
         if(other.CompareTag("Explosion"))
         {
             StartCoroutine(flash());
-            Debug.Log ("dead");
-            //Destroy(heartsObject[life-1]);
+            if(life>0){
+                Destroy(heartsObjects[life]);
+            }
             life--;
-            // if(life == 0){
-
-            // }
+            if(life <=0)
+            {
+                //StartCoroutine(flash());
+                animator.SetTrigger("Death");
+                Debug.Log ("dead");
+            }
         }
     }
 
