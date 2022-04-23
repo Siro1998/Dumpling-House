@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveWASD : MonoBehaviour
 {
     // PLAYER = WASD + RETURN FOR BOMBS
-
+    public AudioSource audioSource;
     public float Speed; // speed (public) 
 
     float MovementX; // x direction
@@ -77,6 +77,7 @@ public class MoveWASD : MonoBehaviour
                 print("foundDumpling");
             } else {
                 // spot is empty, we can spawn
+                audioSource.Play();
                 DropBomb();
             }
             
@@ -92,7 +93,13 @@ public class MoveWASD : MonoBehaviour
     void DropBomb()
     {
         //create bomb at player position
-        Instantiate(dumpling, new Vector3(Mathf.RoundToInt(this.gameObject.transform.position.x), Mathf.RoundToInt(this.gameObject.transform.position.y), 0), dumpling.transform.rotation);
+        int xP = Mathf.RoundToInt(this.gameObject.transform.position.x);
+        int yP = Mathf.RoundToInt(this.gameObject.transform.position.y);
+        if(yP>3){
+            yP=3;
+        }
+        Instantiate(dumpling, new Vector3(xP, yP, 0), dumpling.transform.rotation);
+        
         //Instantiate(dumpling,this.gameObject.transform.position, Quaternion.identity);
     }
 }

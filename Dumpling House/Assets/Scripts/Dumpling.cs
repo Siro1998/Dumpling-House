@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dumpling : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject explosionPrefab;
     public LayerMask levelMask;
     private bool exploded = false;
@@ -20,6 +21,7 @@ public class Dumpling : MonoBehaviour
 
     void Explode()
     {
+        audioSource.Play();
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         StartCoroutine(CreateExplosions(Vector3.up));
         StartCoroutine(CreateExplosions(Vector3.right));

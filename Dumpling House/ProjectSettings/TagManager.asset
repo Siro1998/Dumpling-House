@@ -7,6 +7,8 @@ TagManager:
   - Explosion
   - FxTemporaire
   - Dumpling
+  - PlayerRed
+  - PlayerBlue
   layers:
   - Default
   - TransparentFX

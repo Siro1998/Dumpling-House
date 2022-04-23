@@ -7,10 +7,13 @@ public class PlayerDeath : MonoBehaviour
     SpriteRenderer sprite;
     List<GameObject> heartsObjects;
     public Animator animator;
+    public AudioSource audioSource;
+    private GameManager gcscript;
     int life = 3;
    
     void Start()
     {
+        gcscript = GameObject.FindObjectOfType<GameManager>();
         sprite = GetComponent<SpriteRenderer>();
         Transform[] hearts = GetComponentsInChildren<Transform>();
         heartsObjects = new List<GameObject>();
@@ -38,7 +41,10 @@ public class PlayerDeath : MonoBehaviour
             {
                 //StartCoroutine(flash());
                 animator.SetTrigger("Death");
+                audioSource.Play();
                 Debug.Log ("dead");
+                PlayerPrefs.SetString("playerDead",gameObject.tag);
+                gcscript.GameOver();
             }
         }
     }
