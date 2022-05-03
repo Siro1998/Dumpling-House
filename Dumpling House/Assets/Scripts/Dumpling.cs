@@ -8,9 +8,14 @@ public class Dumpling : MonoBehaviour
     public GameObject explosionPrefab;
     public LayerMask levelMask;
     private bool exploded = false;
+    private bool colliderIsOn = false;
+
+
+    
     void Start()
     {
         Invoke("Explode", 3f);
+        GetComponent<CircleCollider2D>().isTrigger = true;
     }
 
     // Update is called once per frame
@@ -60,4 +65,13 @@ public class Dumpling : MonoBehaviour
             Explode(); // 3
         }
     }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if(!colliderIsOn && (other.CompareTag("PlayerRed")||other.CompareTag("PlayerBlue")))
+        {
+            GetComponent<CircleCollider2D>().isTrigger = false;
+            colliderIsOn = true;
+        }
+    }
+
 }
