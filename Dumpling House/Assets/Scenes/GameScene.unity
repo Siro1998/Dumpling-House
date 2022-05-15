@@ -11338,7 +11338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1146464549775307309, guid: e5e5262798bff4939aba48a3e8dfd2d5, type: 3}
       propertyPath: Speed
-      value: 1500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1146464549775307310, guid: e5e5262798bff4939aba48a3e8dfd2d5, type: 3}
       propertyPath: m_Name
@@ -11367,7 +11367,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 0a88ca73014773048a64bf272b464891, type: 2}
     - target: {fileID: 7064182849948333153, guid: 8ad35c9fce25245fea7378991503855f, type: 3}
       propertyPath: Speed
-      value: 1500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 7064182849948333155, guid: 8ad35c9fce25245fea7378991503855f, type: 3}
       propertyPath: m_Size.x
